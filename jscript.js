@@ -81,8 +81,8 @@ const moveSnake = () => {
   if (nextSnakeHeadPixel.classList.contains("snakeBodyPixel")) {
     clearInterval(moveSnakeInterval); // Menghentikan permainan
     alert(`Kamu Kalah! Kamu berhasil memakan ${totalFoodAte} makanan dan menempuh ${totalDistanceTravelled} blok.`);
-    window.location.reload(); // Memulai ulang permainan
-    return;
+    window.location.href = 'menu.html'; // Redirect ke menu
+        return clearInterval(moveSnakeInterval);
   }
 
   nextSnakeHeadPixel.classList.add("snakeBodyPixel");
