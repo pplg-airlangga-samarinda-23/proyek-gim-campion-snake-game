@@ -1,6 +1,12 @@
+
 body {
-    background-color: rgb(56, 52, 67);
-    text-align: center;
+  background: url('../6943346.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-align: cente
+  /* background-color: rgb(56, 52, 67);
+  text-align: center; */
   }
   
   #gameContainer {
