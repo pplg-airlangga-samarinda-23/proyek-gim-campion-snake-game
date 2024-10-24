@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 2rem;
+    padding: 3rem;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+
+    height: 100vh; /* Mengatur tinggi layar penuh */
+    background: linear-gradient(135deg, purple, blue); /* Gradien dari ungu ke biru */
+    background-size: cover;
+}
+
+.menu {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.game-area {
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+}

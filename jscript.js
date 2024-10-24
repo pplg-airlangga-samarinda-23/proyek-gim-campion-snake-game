@@ -99,9 +99,9 @@ const moveSnake = () => {
     document.getElementById("pointsEarned").innerHTML = totalFoodAte;
 
     // Jika makanan yang dimakan mencapai 10
-    if (totalFoodAte === 10) {
+    if (totalFoodAte === 100) {
       clearInterval(moveSnakeInterval); // Menghentikan permainan
-      alert(`Kamu Berhasil Memakan 10 Makanan! Kamu menempuh ${totalDistanceTravelled} blok.`);
+      alert(`Kamu Berhasil Memakan 100 Makanan! Kamu menempuh ${totalDistanceTravelled} blok.`);
       window.location.replace='menu.html'; // Memulai ulang permainan
       return;
     }

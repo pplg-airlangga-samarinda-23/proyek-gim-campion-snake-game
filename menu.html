@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Menu</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome untuk icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="menu-container">
         <div class="menu-card">
-            <h1 class="game-title">Game Title</h1>
+            <h1 class="game-title">Snake Game</h1>
             
             <!-- Menu Buttons -->
+            <div class="menu-buttons">
+
+                <!-- Menu Buttons -->
             <div class="menu-buttons">
                 <!-- Rating Button -->
                 <button class="menu-button purple">
@@ -25,15 +28,15 @@
                         <span>★★★★☆</span>
                     </div>
                 </button>
-
+                
                 <!-- High Score Button -->
                 <button class="menu-button blue">
                     <div class="button-content">
                         <div class="button-left">
                             <i class="fas fa-trophy"></i>
-                            <a class="menu-button blue" href="../coba/index.html">High Scor</a>
+                            <span>High Score</span>
                         </div>
-                        <span>10,500</span>
+                        <span id="highScore">0</span> <!-- Display high score -->
                     </div>
                 </button>
 
@@ -42,18 +45,23 @@
                     <div class="button-content">
                         <div class="button-left">
                             <i class="fas fa-user"></i>
-                            <span>Creator</span>
+                            <a class="menu-button green" href="../coba/creator.html"><span>Creator</span>  <span>Kelompok 7</span></a>
                         </div>
-                        <span>GameDev</span>
                     </div>
                 </button>
             </div>
 
             <!-- Start Game Button -->
             <button class="start-button">
-                <a class="start-button" href="../coba/index.html"> Start Game</a>
+                <a class="start-button" href="../coba/index.html">Start Game</a>
             </button>
         </div>
     </div>
+
+    <script>
+        // Check local storage for high score
+        const highScore = localStorage.getItem("highScore") || 0;
+        document.getElementById("highScore").innerText = highScore;
+    </script>
 </body>
 </html>
