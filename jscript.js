@@ -77,12 +77,21 @@ const moveSnake = () => {
 
   let nextSnakeHeadPixel = gameBoardPixels[currentSnakeHeadPosition];
 
+  // Fungsi untuk menyimpan high score
+  const updateHighScore = () => {
+    let highScore = localStorage.getItem("highScore") || 0;
+    if (totalFoodAte > highScore) {
+      localStorage.setItem("highScore", totalFoodAte);
+    }
+  };
+
   // Jika ular menabrak tubuhnya sendiri (kalah)
   if (nextSnakeHeadPixel.classList.contains("snakeBodyPixel")) {
+    updateHighScore(); // Perbarui high score
     clearInterval(moveSnakeInterval); // Menghentikan permainan
     alert(`Kamu Kalah! Kamu berhasil memakan ${totalFoodAte} makanan dan menempuh ${totalDistanceTravelled} blok.`);
     window.location.href = 'menu.html'; // Redirect ke menu
-        return clearInterval(moveSnakeInterval);
+    return;
   }
 
   nextSnakeHeadPixel.classList.add("snakeBodyPixel");
@@ -98,11 +107,12 @@ const moveSnake = () => {
     totalFoodAte++;
     document.getElementById("pointsEarned").innerHTML = totalFoodAte;
 
-    // Jika makanan yang dimakan mencapai 10
+    // Jika makanan yang dimakan mencapai 100
     if (totalFoodAte === 100) {
+      updateHighScore(); // Perbarui high score
       clearInterval(moveSnakeInterval); // Menghentikan permainan
       alert(`Kamu Berhasil Memakan 100 Makanan! Kamu menempuh ${totalDistanceTravelled} blok.`);
-      window.location.replace='menu.html'; // Memulai ulang permainan
+      window.location.replace = 'menu.html'; // Memulai ulang permainan
       return;
     }
 
